@@ -10,7 +10,7 @@ class FormController extends Controller
 {
     public function saveForm(Request $request)
     {
-        $result = User::factory(FactoryType::EMAIL)->save();
+        $result = User::factory(FactoryType::EMAIL)->save($request->all());
         return response()->json(['data' => $result]);
     }
 
